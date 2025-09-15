@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.txtValor = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Data_lancamento = new System.Windows.Forms.DateTimePicker();
+            this.chkpagamento = new System.Windows.Forms.CheckBox();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboTipo = new System.Windows.Forms.ComboBox();
+            this.cboServico = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -62,26 +62,26 @@
             this.dataGridView1.Size = new System.Drawing.Size(447, 348);
             this.dataGridView1.TabIndex = 0;
             // 
-            // textBox1
+            // txtCodigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(114, 75);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 22);
-            this.textBox1.TabIndex = 1;
+            this.txtCodigo.Location = new System.Drawing.Point(114, 75);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(200, 22);
+            this.txtCodigo.TabIndex = 1;
             // 
-            // textBox2
+            // txtDescricao
             // 
-            this.textBox2.Location = new System.Drawing.Point(114, 120);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 22);
-            this.textBox2.TabIndex = 2;
+            this.txtDescricao.Location = new System.Drawing.Point(114, 120);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(200, 22);
+            this.txtDescricao.TabIndex = 2;
             // 
-            // textBox3
+            // txtValor
             // 
-            this.textBox3.Location = new System.Drawing.Point(114, 163);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 22);
-            this.textBox3.TabIndex = 3;
+            this.txtValor.Location = new System.Drawing.Point(114, 163);
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(200, 22);
+            this.txtValor.TabIndex = 3;
             // 
             // textBox4
             // 
@@ -90,40 +90,42 @@
             this.textBox4.Size = new System.Drawing.Size(163, 22);
             this.textBox4.TabIndex = 4;
             // 
-            // dateTimePicker1
+            // Data_lancamento
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(114, 285);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 5;
+            this.Data_lancamento.Location = new System.Drawing.Point(114, 285);
+            this.Data_lancamento.Name = "Data_lancamento";
+            this.Data_lancamento.Size = new System.Drawing.Size(200, 22);
+            this.Data_lancamento.TabIndex = 5;
             // 
-            // checkBox1
+            // chkpagamento
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(114, 329);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(95, 20);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkpagamento.AutoSize = true;
+            this.chkpagamento.Location = new System.Drawing.Point(114, 329);
+            this.chkpagamento.Name = "chkpagamento";
+            this.chkpagamento.Size = new System.Drawing.Size(95, 20);
+            this.chkpagamento.TabIndex = 6;
+            this.chkpagamento.Text = "checkBox1";
+            this.chkpagamento.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnCadastrar
             // 
-            this.button1.Location = new System.Drawing.Point(24, 388);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "CADASTRAR";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Location = new System.Drawing.Point(24, 388);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(100, 23);
+            this.btnCadastrar.TabIndex = 7;
+            this.btnCadastrar.Text = "CADASTRAR";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // button2
+            // btnEditar
             // 
-            this.button2.Location = new System.Drawing.Point(130, 388);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "EDITAR";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEditar.Location = new System.Drawing.Point(130, 388);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(92, 23);
+            this.btnEditar.TabIndex = 8;
+            this.btnEditar.Text = "EDITAR";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // button3
             // 
@@ -143,21 +145,21 @@
             this.button4.Text = "BUSCAR";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cboTipo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(114, 205);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 24);
-            this.comboBox1.TabIndex = 11;
+            this.cboTipo.FormattingEnabled = true;
+            this.cboTipo.Location = new System.Drawing.Point(114, 205);
+            this.cboTipo.Name = "cboTipo";
+            this.cboTipo.Size = new System.Drawing.Size(200, 24);
+            this.cboTipo.TabIndex = 11;
             // 
-            // comboBox2
+            // cboServico
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(114, 244);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 24);
-            this.comboBox2.TabIndex = 12;
+            this.cboServico.FormattingEnabled = true;
+            this.cboServico.Location = new System.Drawing.Point(114, 244);
+            this.cboServico.Name = "cboServico";
+            this.cboServico.Size = new System.Drawing.Size(200, 24);
+            this.cboServico.TabIndex = 12;
             // 
             // label1
             // 
@@ -244,18 +246,18 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboServico);
+            this.Controls.Add(this.cboTipo);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.chkpagamento);
+            this.Controls.Add(this.Data_lancamento);
             this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtValor);
+            this.Controls.Add(this.txtDescricao);
+            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -269,18 +271,18 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.TextBox txtDescricao;
+        private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DateTimePicker Data_lancamento;
+        private System.Windows.Forms.CheckBox chkpagamento;
+        private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboTipo;
+        private System.Windows.Forms.ComboBox cboServico;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

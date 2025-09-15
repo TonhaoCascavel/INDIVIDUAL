@@ -3,12 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\Aluno\\source\\repos\\INDIVIDUAL\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BFFE62A4-BEFC-4F8B-A321-3E4CADA5FC83}|INDIVIDUAL\\INDIVIDUAL.csproj|c:\\users\\aluno\\source\\repos\\individual\\individual\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BFFE62A4-BEFC-4F8B-A321-3E4CADA5FC83}|INDIVIDUAL\\INDIVIDUAL.csproj|solutionrelative:individual\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{BFFE62A4-BEFC-4F8B-A321-3E4CADA5FC83}|INDIVIDUAL\\INDIVIDUAL.csproj|d:\\trabalho 1, terminar\\conexao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BFFE62A4-BEFC-4F8B-A321-3E4CADA5FC83}|INDIVIDUAL\\INDIVIDUAL.csproj|c:\\users\\aluno\\source\\repos\\individual\\individual\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BFFE62A4-BEFC-4F8B-A321-3E4CADA5FC83}|INDIVIDUAL\\INDIVIDUAL.csproj|c:\\users\\aluno\\source\\repos\\individual\\individual\\financeirocs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFFE62A4-BEFC-4F8B-A321-3E4CADA5FC83}|INDIVIDUAL\\INDIVIDUAL.csproj|solutionrelative:individual\\financeirocs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFFE62A4-BEFC-4F8B-A321-3E4CADA5FC83}|INDIVIDUAL\\INDIVIDUAL.csproj|C:\\Users\\Aluno\\source\\repos\\INDIVIDUAL\\individual\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BFFE62A4-BEFC-4F8B-A321-3E4CADA5FC83}|INDIVIDUAL\\INDIVIDUAL.csproj|solutionrelative:individual\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFFE62A4-BEFC-4F8B-A321-3E4CADA5FC83}|INDIVIDUAL\\INDIVIDUAL.csproj|c:\\users\\aluno\\source\\repos\\individual\\individual\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BFFE62A4-BEFC-4F8B-A321-3E4CADA5FC83}|INDIVIDUAL\\INDIVIDUAL.csproj|solutionrelative:individual\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,24 +25,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "conexao.cs",
+              "DocumentMoniker": "D:\\trabalho 1, terminar\\conexao.cs",
+              "ToolTip": "D:\\trabalho 1, terminar\\conexao.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAuwCcAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T11:35:57.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "financeirocs.cs",
+              "DocumentMoniker": "C:\\Users\\Aluno\\source\\repos\\INDIVIDUAL\\INDIVIDUAL\\financeirocs.cs",
+              "RelativeDocumentMoniker": "INDIVIDUAL\\financeirocs.cs",
+              "ToolTip": "C:\\Users\\Aluno\\source\\repos\\INDIVIDUAL\\INDIVIDUAL\\financeirocs.cs",
+              "RelativeToolTip": "INDIVIDUAL\\financeirocs.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAowD8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T11:30:55.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\Aluno\\source\\repos\\INDIVIDUAL\\INDIVIDUAL\\Form1.cs",
               "RelativeDocumentMoniker": "INDIVIDUAL\\Form1.cs",
               "ToolTip": "C:\\Users\\Aluno\\source\\repos\\INDIVIDUAL\\INDIVIDUAL\\Form1.cs",
               "RelativeToolTip": "INDIVIDUAL\\Form1.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAtwBMAAAAbAAAA",
+              "ViewState": "AQIAACsAAAAAAAAAAAAowEcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-12T15:50:25.998Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Aluno\\source\\repos\\INDIVIDUAL\\INDIVIDUAL\\Form1.cs",
               "RelativeDocumentMoniker": "INDIVIDUAL\\Form1.cs",
@@ -44,10 +75,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-12T12:25:10.397Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }
