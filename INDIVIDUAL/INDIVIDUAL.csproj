@@ -110,10 +110,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="D:\trabalho 1, terminar\conexao.cs">
-      <Link>conexao.cs</Link>
-    </Compile>
-    <Compile Include="financeirocs.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvServicos = new System.Windows.Forms.DataGridView();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.txtValor = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.Data_lancamento = new System.Windows.Forms.DateTimePicker();
-            this.chkpagamento = new System.Windows.Forms.CheckBox();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
+            this.dtpData = new System.Windows.Forms.DateTimePicker();
+            this.chkPagamento = new System.Windows.Forms.CheckBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.cboTipo = new System.Windows.Forms.ComboBox();
-            this.cboServico = new System.Windows.Forms.ComboBox();
+            this.cmbTipo = new System.Windows.Forms.ComboBox();
+            this.cmbServico = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,18 +49,18 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvServicos)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvServicos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(341, 78);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(447, 348);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvServicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvServicos.Location = new System.Drawing.Point(341, 78);
+            this.dgvServicos.Name = "dgvServicos";
+            this.dgvServicos.RowHeadersWidth = 51;
+            this.dgvServicos.RowTemplate.Height = 24;
+            this.dgvServicos.Size = new System.Drawing.Size(447, 348);
+            this.dgvServicos.TabIndex = 0;
             // 
             // txtCodigo
             // 
@@ -83,29 +83,29 @@
             this.txtValor.Size = new System.Drawing.Size(200, 22);
             this.txtValor.TabIndex = 3;
             // 
-            // textBox4
+            // txtPesquisar
             // 
-            this.textBox4.Location = new System.Drawing.Point(429, 34);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(163, 22);
-            this.textBox4.TabIndex = 4;
+            this.txtPesquisar.Location = new System.Drawing.Point(429, 34);
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(163, 22);
+            this.txtPesquisar.TabIndex = 4;
             // 
-            // Data_lancamento
+            // dtpData
             // 
-            this.Data_lancamento.Location = new System.Drawing.Point(114, 285);
-            this.Data_lancamento.Name = "Data_lancamento";
-            this.Data_lancamento.Size = new System.Drawing.Size(200, 22);
-            this.Data_lancamento.TabIndex = 5;
+            this.dtpData.Location = new System.Drawing.Point(114, 285);
+            this.dtpData.Name = "dtpData";
+            this.dtpData.Size = new System.Drawing.Size(200, 22);
+            this.dtpData.TabIndex = 5;
             // 
-            // chkpagamento
+            // chkPagamento
             // 
-            this.chkpagamento.AutoSize = true;
-            this.chkpagamento.Location = new System.Drawing.Point(114, 329);
-            this.chkpagamento.Name = "chkpagamento";
-            this.chkpagamento.Size = new System.Drawing.Size(95, 20);
-            this.chkpagamento.TabIndex = 6;
-            this.chkpagamento.Text = "checkBox1";
-            this.chkpagamento.UseVisualStyleBackColor = true;
+            this.chkPagamento.AutoSize = true;
+            this.chkPagamento.Location = new System.Drawing.Point(114, 329);
+            this.chkPagamento.Name = "chkPagamento";
+            this.chkPagamento.Size = new System.Drawing.Size(95, 20);
+            this.chkPagamento.TabIndex = 6;
+            this.chkPagamento.Text = "checkBox1";
+            this.chkPagamento.UseVisualStyleBackColor = true;
             // 
             // btnCadastrar
             // 
@@ -135,6 +135,7 @@
             this.button3.TabIndex = 9;
             this.button3.Text = "EXCLUIR";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -144,22 +145,23 @@
             this.button4.TabIndex = 10;
             this.button4.Text = "BUSCAR";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // cboTipo
+            // cmbTipo
             // 
-            this.cboTipo.FormattingEnabled = true;
-            this.cboTipo.Location = new System.Drawing.Point(114, 205);
-            this.cboTipo.Name = "cboTipo";
-            this.cboTipo.Size = new System.Drawing.Size(200, 24);
-            this.cboTipo.TabIndex = 11;
+            this.cmbTipo.FormattingEnabled = true;
+            this.cmbTipo.Location = new System.Drawing.Point(114, 205);
+            this.cmbTipo.Name = "cmbTipo";
+            this.cmbTipo.Size = new System.Drawing.Size(200, 24);
+            this.cmbTipo.TabIndex = 11;
             // 
-            // cboServico
+            // cmbServico
             // 
-            this.cboServico.FormattingEnabled = true;
-            this.cboServico.Location = new System.Drawing.Point(114, 244);
-            this.cboServico.Name = "cboServico";
-            this.cboServico.Size = new System.Drawing.Size(200, 24);
-            this.cboServico.TabIndex = 12;
+            this.cmbServico.FormattingEnabled = true;
+            this.cmbServico.Location = new System.Drawing.Point(114, 244);
+            this.cmbServico.Name = "cmbServico";
+            this.cmbServico.Size = new System.Drawing.Size(200, 24);
+            this.cmbServico.TabIndex = 12;
             // 
             // label1
             // 
@@ -246,23 +248,23 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cboServico);
-            this.Controls.Add(this.cboTipo);
+            this.Controls.Add(this.cmbServico);
+            this.Controls.Add(this.cmbTipo);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.chkpagamento);
-            this.Controls.Add(this.Data_lancamento);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.chkPagamento);
+            this.Controls.Add(this.dtpData);
+            this.Controls.Add(this.txtPesquisar);
             this.Controls.Add(this.txtValor);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.txtCodigo);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvServicos);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvServicos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,19 +272,19 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvServicos;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.TextBox txtValor;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.DateTimePicker Data_lancamento;
-        private System.Windows.Forms.CheckBox chkpagamento;
+        private System.Windows.Forms.TextBox txtPesquisar;
+        private System.Windows.Forms.DateTimePicker dtpData;
+        private System.Windows.Forms.CheckBox chkPagamento;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox cboTipo;
-        private System.Windows.Forms.ComboBox cboServico;
+        private System.Windows.Forms.ComboBox cmbTipo;
+        private System.Windows.Forms.ComboBox cmbServico;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,9 @@ namespace INDIVIDUAL
 {
     public partial class Form1 : Form
     {
+        private string connectionString = "Server=localhost\\SQLEXPRESS; Database=Indivudual; Integrated Security=True;";
+
+
         public Form1()
         {
             InitializeComponent();
@@ -19,52 +23,116 @@ namespace INDIVIDUAL
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-            conexao com = new conexao();
-            com.getConexao();
-            dataGridView1.DataSource = com.obterdados("select * from financeiro");
-           
-            cboServico.Items.Add("Salário");
-            cboServico.Items.Add("despesas");
-            cboTipo.Items.Add("Entrada");
-            cboTipo.Items.Add("Saída");
-        }
+            CarregarDados();
 
+            cmbTipo.Items.Clear();
+            cmbTipo.Items.Add("Produto");
+            cmbTipo.Items.Add("Serviço");
+            cmbTipo.Items.Add("Outro");
+
+            cmbServico.Items.Clear();
+            cmbServico.Items.Add("Manutenção");
+            cmbServico.Items.Add("Instalação");
+            cmbServico.Items.Add("Consultoria");
+        }
+        private void CarregarDados()
+        {
+            string query = "SELECT * FROM Servicos";  // Consultar todos os registros
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);  // Preenche o DataTable com os dados
+
+                // Atribui o DataTable ao DataGridView
+                dgvServicos.DataSource = dt;
+            }
+        }
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            conexao con = new conexao();
-            con.getConexao();
-            
-            financeirocs fin = new financeirocs();
-            
-            fin.data_lancamento = Data_lancamento.Value;
-            fin.descricao = txtDescricao.Text;
-            fin.servico = cboServico.Text;
-            fin.valor = decimal.Parse(txtValor.Text);
-            fin.tipo = cboTipo.Text;
-            fin.pgto = chkpagamento.Checked;
-            if (fin.cadastrar(con) == true)
+            string query = "INSERT INTO Servicos (Codigo, Descricao, Valor, Tipo, Servico, Data, Pagamento) VALUES (@Codigo, @Descricao, @Valor, @Tipo, @Servico, @Data, @Pagamento)";
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                MessageBox.Show("Cadastrado com sucesso");
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Codigo", txtCodigo.Text);
+                cmd.Parameters.AddWithValue("@Descricao", txtDescricao.Text);
+                cmd.Parameters.AddWithValue("@Valor", txtValor.Text);
+                cmd.Parameters.AddWithValue("@Tipo", cmbTipo.SelectedItem);
+                cmd.Parameters.AddWithValue("@Servico", cmbServico.SelectedItem);
+                cmd.Parameters.AddWithValue("@Data", dtpData.Value);
+                cmd.Parameters.AddWithValue("@Pagamento", chkPagamento.Checked);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();  // Executa a inserção
+
+                // Atualiza o DataGridView
+                CarregarDados();
             }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            
-            conexao com = new conexao();
-            
-            financeirocs financeiro = new financeirocs();
-            financeiro.id = Convert.ToInt32(txtCodigo.Text);
-            financeiro.descricao = txtDescricao.Text;
-            financeiro.servico = cboServico.Text;
-            financeiro.tipo = cboTipo.Text;
-            financeiro.valor = decimal.Parse(txtValor.Text);
-            financeiro.pgto = chkpagamento.Checked;
-            financeiro.data_lancamento = Data_lancamento.Value;
-            if (financeiro.editar(com) == true)
+            if (dgvServicos.SelectedRows.Count > 0)
             {
-                MessageBox.Show("Editado com sucesso!");
+                int id = Convert.ToInt32(dgvServicos.SelectedRows[0].Cells["Id"].Value);  // Pega o ID da linha selecionada
+
+                string query = "UPDATE Servicos SET Codigo = @Codigo, Descricao = @Descricao, Valor = @Valor, Tipo = @Tipo, Servico = @Servico, Data = @Data, Pagamento = @Pagamento WHERE Id = @Id";
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    cmd.Parameters.AddWithValue("@Codigo", txtCodigo.Text);
+                    cmd.Parameters.AddWithValue("@Descricao", txtDescricao.Text);
+                    cmd.Parameters.AddWithValue("@Valor", txtValor.Text);
+                    cmd.Parameters.AddWithValue("@Tipo", cmbTipo.SelectedItem);
+                    cmd.Parameters.AddWithValue("@Servico", cmbServico.SelectedItem);
+                    cmd.Parameters.AddWithValue("@Data", dtpData.Value);
+                    cmd.Parameters.AddWithValue("@Pagamento", chkPagamento.Checked);
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();  // Atualiza o registro
+
+                    // Atualiza o DataGridView
+                    CarregarDados();
+                }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM Servicos WHERE Codigo LIKE @Codigo";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Codigo", "%" + txtPesquisar.Text + "%");  // Pesquisar pelo código
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                // Atribui os resultados ao DataGridView
+                dgvServicos.DataSource = dt;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (dgvServicos.SelectedRows.Count > 0)
+            {
+                int id = Convert.ToInt32(dgvServicos.SelectedRows[0].Cells["Id"].Value);  // Pega o ID da linha selecionada
+
+                string query = "DELETE FROM Servicos WHERE Id = @Id";
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@Id", id);
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();  // Exclui o registro
+
+                    // Atualiza o DataGridView
+                    CarregarDados();
+                }
             }
         }
     }
