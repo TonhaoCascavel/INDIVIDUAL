@@ -53,3 +53,17 @@ C:\Users\Aluno\Source\Repos\INDIVIDUAL\INDIVIDUAL\bin\Debug\es\Hangfire.Core.res
 C:\Users\Aluno\Source\Repos\INDIVIDUAL\INDIVIDUAL\bin\Debug\nl\Hangfire.Core.resources.dll
 C:\Users\Aluno\Source\Repos\INDIVIDUAL\INDIVIDUAL\bin\Debug\zh\Hangfire.Core.resources.dll
 C:\Users\Aluno\Source\Repos\INDIVIDUAL\INDIVIDUAL\bin\Debug\zh-TW\Hangfire.Core.resources.dll
+C:\Users\Aluno\Source\Repos\INDIVIDUAL\INDIVIDUAL\bin\Debug\EPPlus.dll
+C:\Users\Aluno\Source\Repos\INDIVIDUAL\INDIVIDUAL\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\Aluno\Source\Repos\INDIVIDUAL\INDIVIDUAL\bin\Debug\itextsharp.dll
+C:\Users\Aluno\Source\Repos\INDIVIDUAL\INDIVIDUAL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Aluno\Source\Repos\INDIVIDUAL\INDIVIDUAL\bin\Debug\OxyPlot.dll
+C:\Users\Aluno\Source\Repos\INDIVIDUAL\INDIVIDUAL\bin\Debug\OxyPlot.WindowsForms.dll
+C:\Users\Aluno\Source\Repos\INDIVIDUAL\INDIVIDUAL\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\Aluno\Source\Repos\INDIVIDUAL\INDIVIDUAL\bin\Debug\System.Security.Cryptography.Xml.dll
+C:\Users\Aluno\Source\Repos\INDIVIDUAL\INDIVIDUAL\bin\Debug\EPPlus.xml
+C:\Users\Aluno\Source\Repos\INDIVIDUAL\INDIVIDUAL\bin\Debug\itextsharp.xml
+C:\Users\Aluno\Source\Repos\INDIVIDUAL\INDIVIDUAL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\Aluno\Source\Repos\INDIVIDUAL\INDIVIDUAL\bin\Debug\OxyPlot.xml
+C:\Users\Aluno\Source\Repos\INDIVIDUAL\INDIVIDUAL\bin\Debug\OxyPlot.WindowsForms.xml
+C:\Users\Aluno\Source\Repos\INDIVIDUAL\INDIVIDUAL\bin\Debug\System.Security.Cryptography.Xml.xml

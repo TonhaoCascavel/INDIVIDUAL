@@ -4,10 +4,16 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OfficeOpenXml;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using OxyPlot;
+using OxyPlot.Series;
 
 namespace INDIVIDUAL
 {
@@ -34,6 +40,110 @@ namespace INDIVIDUAL
             cmbServico.Items.Add("Manutenção");
             cmbServico.Items.Add("Instalação");
             cmbServico.Items.Add("Consultoria");
+        }
+
+
+        private void GerarGrafico()
+        {
+            // Criar um modelo de gráfico
+            var plotModel = new PlotModel { Title = "Relatório de Servicos" };
+
+            // Criar uma série de barras
+            var barSeries = new BarSeries
+            {
+                ItemsSource = new List<BarItem>
+        {
+            new BarItem { Value = 10 }, // Exemplo de dado
+            new BarItem { Value = 20 }, // Exemplo de dado
+            new BarItem { Value = 30 }, // Exemplo de dado
+        },
+                LabelPlacement = LabelPlacement.Inside
+            };
+
+            plotModel.Series.Add(barSeries);
+
+            // Exibir o gráfico em um controle OxyPlot
+            var plotView = new OxyPlot.WindowsForms.PlotView
+            {
+                Model = plotModel,
+                Dock = DockStyle.Fill
+            };
+
+            this.Controls.Add(plotView);
+        }
+        private void ExportToPDF()
+        {
+            // Criação do documento PDF
+            Document doc = new Document(iTextSharp.text.PageSize.A4);
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "PDF Files|*.pdf";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Criar um arquivo de saída
+                FileStream fs = new FileStream(saveFileDialog.FileName, FileMode.Create);
+                PdfWriter writer = PdfWriter.GetInstance(doc, fs);
+                doc.Open();
+
+                // Criar tabela para os dados
+                PdfPTable table = new PdfPTable(dgvServicos.Columns.Count);
+
+                // Adicionar cabeçalhos
+                foreach (DataGridViewColumn column in dgvServicos.Columns)
+                {
+                    table.AddCell(column.HeaderText);
+                }
+
+                // Adicionar dados das linhas
+                foreach (DataGridViewRow row in dgvServicos.Rows)
+                {
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        table.AddCell(cell.Value?.ToString());
+                    }
+                }
+
+                // Adicionar a tabela ao documento
+                doc.Add(table);
+                doc.Close();
+                fs.Close();
+
+                MessageBox.Show("Relatório PDF gerado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void ExportToExcel()
+        {
+            
+            using (var package = new ExcelPackage())
+            {
+             
+                var worksheet = package.Workbook.Worksheets.Add("Relatorio");
+
+           
+                for (int i = 0; i < dgvServicos.Columns.Count; i++)
+                {
+                    worksheet.Cells[1, i + 1].Value = dgvServicos.Columns[i].HeaderText; 
+                }
+
+                for (int i = 0; i < dgvServicos.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dgvServicos.Columns.Count; j++)
+                    {
+                        worksheet.Cells[i + 2, j + 1].Value = dgvServicos.Rows[i].Cells[j].Value?.ToString();
+                    }
+                }
+
+         
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel Files|*.xlsx";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    FileInfo fi = new FileInfo(saveFileDialog.FileName);
+                    package.SaveAs(fi);
+                    MessageBox.Show("Relatório exportado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
         private void CarregarDados()
         {
@@ -134,6 +244,16 @@ namespace INDIVIDUAL
                     CarregarDados();
                 }
             }
+        }
+
+        private void btnExportarExcel_Click(object sender, EventArgs e)
+        {
+            ExportToExcel();
+        }
+
+        private void btnExportarPDF_Click(object sender, EventArgs e)
+        {
+            ExportToPDF();
         }
     }
 }

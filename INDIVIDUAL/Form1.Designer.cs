@@ -49,6 +49,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnExportarExcel = new System.Windows.Forms.Button();
+            this.btnExportarPDF = new System.Windows.Forms.Button();
+            this.btnGerarGrafico = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +62,7 @@
             this.dgvServicos.Name = "dgvServicos";
             this.dgvServicos.RowHeadersWidth = 51;
             this.dgvServicos.RowTemplate.Height = 24;
-            this.dgvServicos.Size = new System.Drawing.Size(447, 348);
+            this.dgvServicos.Size = new System.Drawing.Size(342, 348);
             this.dgvServicos.TabIndex = 0;
             // 
             // txtCodigo
@@ -235,11 +238,43 @@
             this.label8.TabIndex = 20;
             this.label8.Text = "PESQUISAR";
             // 
+            // btnExportarExcel
+            // 
+            this.btnExportarExcel.Location = new System.Drawing.Point(702, 78);
+            this.btnExportarExcel.Name = "btnExportarExcel";
+            this.btnExportarExcel.Size = new System.Drawing.Size(75, 68);
+            this.btnExportarExcel.TabIndex = 21;
+            this.btnExportarExcel.Text = "Relátorio Excel";
+            this.btnExportarExcel.UseVisualStyleBackColor = true;
+            this.btnExportarExcel.Click += new System.EventHandler(this.btnExportarExcel_Click);
+            // 
+            // btnExportarPDF
+            // 
+            this.btnExportarPDF.Location = new System.Drawing.Point(702, 152);
+            this.btnExportarPDF.Name = "btnExportarPDF";
+            this.btnExportarPDF.Size = new System.Drawing.Size(75, 68);
+            this.btnExportarPDF.TabIndex = 22;
+            this.btnExportarPDF.Text = "Relátorio PDF";
+            this.btnExportarPDF.UseVisualStyleBackColor = true;
+            this.btnExportarPDF.Click += new System.EventHandler(this.btnExportarPDF_Click);
+            // 
+            // btnGerarGrafico
+            // 
+            this.btnGerarGrafico.Location = new System.Drawing.Point(702, 226);
+            this.btnGerarGrafico.Name = "btnGerarGrafico";
+            this.btnGerarGrafico.Size = new System.Drawing.Size(75, 68);
+            this.btnGerarGrafico.TabIndex = 23;
+            this.btnGerarGrafico.Text = "Gerar Gráfico";
+            this.btnGerarGrafico.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnGerarGrafico);
+            this.Controls.Add(this.btnExportarPDF);
+            this.Controls.Add(this.btnExportarExcel);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -293,6 +328,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnExportarExcel;
+        private System.Windows.Forms.Button btnExportarPDF;
+        private System.Windows.Forms.Button btnGerarGrafico;
     }
 }
 
