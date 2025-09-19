@@ -13,7 +13,7 @@ namespace INDIVIDUAL
 {
     public partial class Form1 : Form
     {
-        private string connectionString = "Server=localhost\\SQLEXPRESS; Database=Indivudual; Integrated Security=True;";
+        private string connectionString = "Server=localhost\\SQLEXPRESS; Database=Individual; Integrated Security=True;";
 
 
         public Form1()
